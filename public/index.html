@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <link rel="stylesheet" href="style.css">
+    <title>PID Electrical Services</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+    <h1>PID Electrical Services Pty LTD</h1>
+    <div class="contact-details" id="contact-details">
+      Call us today: 0411 111 111
+    </div>
+
+    <div id="form-main">
+      <div id="form-div">
+        <form class="form" id="form1">
+
+          <p class="name">
+            <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="name" />
+          </p>
+
+          <p class="phone">
+            <input name="phone" type="text" class="validate[required,custom[email]] feedback-input" id="phone" placeholder="Phone Number" />
+          </p>
+
+          <p class="message">
+            <textarea name="message" class="validate[required,length[6,300]] feedback-input" id="message" placeholder="Message"></textarea>
+          </p>
+
+
+          <div class="submit">
+            <input type="submit" value="Request Call" id="button-blue"/>
+        </form>
+      </div>
+
+    <div class="intro" id="intro"> 
+    Looking for an electrician in the Geelong or Golden Plains area?
+    </div>
+    <div class="bio" id="bio">
+      With over 30 years experience we offer our customers expert customer service and quality workmanship at affordable prices
+      <br>
+      We offer the following services to domestic and commercial customers:
+      <ul class="service-list" id="service-list">
+        <li>New and repairs for electrical work: power, lighting, industrial controls, undergrounds</li>
+        <li>Instrumentation: installation, testing and calibrations</li>
+        <li>Data cabling: installation alterations (Computer and telephone)</li>
+      </ul>
+    </div>
+    <div class="safety-info" id="safety-info">
+    Why choose us?
+      <ul>
+      <li>Safety first: We don't cut corners and never compromise on the safety of our staff or customers</li>
+      <li>Professional: We are clean, tidy and respectful technicians and take away the rubbish at the end of the job</li>
+      <li> Reliable: We always arrive when we say we will </li>
+      <li>Qualified: All of our technicians are qualified to the highest Australian standards and we are more than happy to provide our licences, registrations, and safety compliance paperwork</li>
+      </ul> 
+    </div>
+
+    <div class="service-area-map" id="service-area-map">
+      Service Areas: 
+      <br>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d403245.7554917117!2d143.5833390665803!3d-37.85192552972934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad3e456e212167b%3A0x3ea8bfa7292cadf3!2sGolden%20Plains%2C%20VIC!5e0!3m2!1sen!2sau!4v1594965287834!5m2!1sen!2sau" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d402149.99904711003!2d144.18128170744592!3d-38.05181924786575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad42240d49310b5%3A0x8a8a3e72dc573d65!2sGreater%20Geelong%2C%20VIC!5e0!3m2!1sen!2sau!4v1594965980938!5m2!1sen!2sau" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+
+  </body>
+</html>
