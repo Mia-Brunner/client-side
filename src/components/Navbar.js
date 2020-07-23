@@ -28,8 +28,7 @@ return (
             <Link style={linkStyles} onClick={handleLogout} to="/">Logout</Link>
             </div>)
         : (<div>
-            <Link style={linkStyles} to="/">Home</Link>
-            <Link style={linkStyles} to="/auth/login">Login</Link>
+            <Link style={linkStyles} to="/login">Login</Link>
             </div>)
         }
         <div >
