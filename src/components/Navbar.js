@@ -1,13 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
     <nav>
-      <h1> to be replaced with image of company name</h1>
+      <Link to='/'> <h1> to be replaced with image of company name</h1></Link>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="login.html">Login</a></li>
+        <li>
+          <Link to='/services'>Services</Link>
+        </li>
+        <li>
+          <Link to='/login'>Login</Link>
+        </li>
       </ul>
     </nav>
   )
