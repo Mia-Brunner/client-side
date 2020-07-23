@@ -40,8 +40,13 @@ const SignIn = ({history}) => {
         })		
     }
 
+    const errorStyles = {
+        color: "red"
+    }
+
     return (
         <form onSubmit={handleSubmit}>
+            {errorMessage && <p style={errorStyles}>{errorMessage}</p>}
             <div>
                 <label>Username</label>
                 <input required type="text" name="username" placeholder="Enter a username" onChange={handleChange}></input>

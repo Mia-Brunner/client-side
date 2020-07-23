@@ -8,10 +8,10 @@ export async function loginUser(userInfo) {
     return response.data
 }
 
-// export async function logoutUser() {
-//     // call to server to logout user
-//     return api.get("/auth/logout")
-// }
+export async function logoutUser() {
+    // call to server to logout user
+    return api.get("/auth/logout")
+}
 
 // export async function registerUser(userInfo) {
 //     // call to server to register user

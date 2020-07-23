@@ -11,10 +11,10 @@ import NewQuote from './components/NewQuote';
 import NotFound from './components/NotFound';
 import Home from './components/Home';
 
-import stateReducer from './config/stateReducer'
-import {StateContext} from './config/store'
+import stateReducer from './config/stateReducer';
+import {StateContext} from './config/store';
 
-import {getQuoteFromId, getAllQuotes} from './services/quoteServices'
+import {getQuoteFromId, getAllQuotes} from './services/quoteServices';
 
 const App = () => {
 
@@ -25,10 +25,29 @@ const App = () => {
     loggedInUser: null,
   }
 
+  function fetchQuotes() {
+    getAllQuotes().then((quoteData) => {
+      dispatch({
+        type: "setQuotes",
+        data: quoteData
+      })
+    }).catch((error) => {
+      dispatch({
+        type: "setError",
+        data: true
+      })
+      console.log("An error occurred fetching quotes from the server:", error) 
+    })
+}
+
+useEffect(() => {
+    fetchQuotes()
+    
+},[])
 
 
   const [store,dispatch] = useReducer(stateReducer,initialState)
-  const {Quotes, error} = store
+  const {quotes, error} = store
 
   useEffect(() => {
     dispatch({
@@ -47,7 +66,7 @@ const App = () => {
             <Fragment>
               <Route path="/" component={Home} />
               <Route exact path="/quotes" component={Quotes} />
-              <Route exact path="/quotes/:id" render={(props) => <Quote {...props} quote={getQuoteFromId(props.match.params.id)} showControls /> } />
+              <Route exact path="/quotes/:id" render={(props) => <Quote {...props} quote={getQuoteFromId(quotes,props.match.params.id)} showControls /> } />
               <Route exact path="/quotes/new" component={NewQuote} />
               <Route exact path="/login" component={SignIn} />
             </Fragment>
