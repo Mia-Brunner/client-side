@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import {useGlobalState} from '../config/store'
 import {loginUser, setLoggedInUser} from '../services/authServices'
-// import {InputButton, Input, Label, Block, ErrorText} from './StyledCompnents'
 
 const SignIn = ({history}) => {
     const initialFormState = {
@@ -41,27 +40,8 @@ const SignIn = ({history}) => {
         })		
     }
 
-    // to replace this with axios later 
-  //   function handleSubmit(event) {
-  //     event.preventDefault()
-  //     loginUser(userDetails)
-  //     history.push("/")
-  // }
     return (
         <form onSubmit={handleSubmit}>
-            {/* {errorMessage && <ErrorText>{errorMessage}</ErrorText>}
-            <Block>
-                <Label>Username</Label>
-                <Input required type="text" name="username" placeholder="Enter a username" onChange={handleChange}></Input>
-            </Block>
-            <Block>
-                <Label>Password</Label>
-                <Input required type="password" name="password" placeholder="Enter a password" onChange={handleChange}></Input>
-            </Block>
-            <Block>
-                <InputButton type="submit" value="Login"></InputButton>
-            </Block> */}
-            
             <div>
                 <label>Username</label>
                 <input required type="text" name="username" placeholder="Enter a username" onChange={handleChange}></input>

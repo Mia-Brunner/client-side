@@ -7,7 +7,7 @@ const Quotes = () => {
   const {quotes} = store
   return (
     <div>
-      {quotes}
+    {quotes.map(quote => (<Quote key={quote._id} quote={quote} /> ))}
     </div>
   )
 }
