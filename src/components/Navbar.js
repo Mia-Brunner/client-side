@@ -35,6 +35,7 @@ return (
         ? (<div>
             <Link style={linkStyles} to="/">{loggedInUser}</Link>
             <Link style={linkStyles} onClick={handleLogout} to="/">Logout</Link>
+            {/* <Link style={linkStyles} to="/quotes">Get Quotes</Link>????? */}
             </div>)
         : (<div>
             <Link style={linkStyles} to="/login">Login</Link>

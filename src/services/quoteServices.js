@@ -23,8 +23,3 @@ export async function deleteQuote(id) {
     const response = await api.delete(`/quotes/${id}`)
     return response.data
 }
-
-// export async function updateBlogPost(post) {
-//     const response = await api.put(`/posts/${post._id}`, post)
-//     return response.data
-// }
