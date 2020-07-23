@@ -6,12 +6,12 @@
               loggedInUser: action.data
           }
       }
-      // case "setQuotes": {
-      //     return {
-      //         ...state,
-      //         quotes: action.data
-      //     }
-      // }
+      case "setQuotes": {
+          return {
+              ...state,
+              quotes: action.data
+          }
+      }
       case "setError": {
           return {
               ...state,
