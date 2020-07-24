@@ -32,10 +32,10 @@ export async function logoutUser() {
 //     }
 // }
 
-// // Get loggedInUser from localStorage
-// export function getLoggedInUser() {
-//     return localStorage.getItem("loggedInUser")
-// }
+// Get loggedInUser from localStorage
+export function getLoggedInUser() {
+    return localStorage.getItem("loggedInUser")
+}
 
 // Store loggedInUser username in local storage
 export function setLoggedInUser(user) {
