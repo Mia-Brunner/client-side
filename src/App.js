@@ -64,8 +64,8 @@ useEffect(() => {
           {error ?  (<NotFound /> )
           : (
             <Fragment>
-              <Route path="/" component={Home} />
-              <Route exact path="/quotes" component={Quotes} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/dashboard" component={Quotes} />
               <Route exact path="/quotes/:id" render={(props) => <Quote {...props} quote={getQuoteFromId(quotes,props.match.params.id)} showControls /> } />
               <Route exact path="/quotes/new" component={NewQuote} />
               <Route exact path="/login" component={SignIn} />

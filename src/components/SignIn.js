@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {useGlobalState} from '../config/store'
 import {loginUser, setLoggedInUser} from '../services/authServices'
 
+
 const SignIn = ({history}) => {
     const initialFormState = {
         username: "",
@@ -30,7 +31,7 @@ const SignIn = ({history}) => {
                 type: "setLoggedInUser",
                 data: userDetails.username
             })
-            history.push("/")
+            history.push("/dashboard")
 
         }).catch((error) => {
             if (error.response && error.response.status === 401)
@@ -39,6 +40,8 @@ const SignIn = ({history}) => {
                 setErrorMessage("There may be a problem with the server. Please try again after a few moments.")
         })		
     }
+
+
 
     const errorStyles = {
         color: "red"
