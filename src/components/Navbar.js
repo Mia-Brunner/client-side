@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {logoutUser} from '../services/authServices'
 import {useGlobalState} from '../config/store'
+import {redirect} from 'react-router-dom'
 
 const Navbar = () => {
   const divStyles = {
@@ -35,15 +36,14 @@ return (
         ? (<div>
             <Link style={linkStyles} to="/">{loggedInUser}</Link>
             <Link style={linkStyles} onClick={handleLogout} to="/">Logout</Link>
-            {/* <Link style={linkStyles} to="/quotes">Get Quotes</Link>????? */}
             </div>)
         : (<div>
             <Link style={linkStyles} to="/login">Login</Link>
+            <Link style={linkStyles} to="/quotes/new">Add a quote</Link>
             </div>)
         }
         <div >
             <Link style={linkStyles} to="/">Home</Link>
-            <Link style={linkStyles} to="/quotes/new">Add a quote</Link>
         </div>
     </div>
 )

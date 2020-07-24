@@ -1,5 +1,7 @@
+
 import React,{Fragment, useReducer, useEffect, useState} from 'react'
 import {BrowserRouter, Route} from 'react-router-dom';
+
 import Navbar from './components/Navbar'
 import SignIn from './components/SignIn';
 
@@ -15,6 +17,7 @@ import stateReducer from './config/stateReducer';
 import {StateContext} from './config/store';
 
 import {getQuoteFromId, getAllQuotes} from './services/quoteServices';
+import PrivateRoute from './components/PrivateRoute'
 
 
 const App = () => {
@@ -63,11 +66,11 @@ useEffect(() => {
           {error ?  (<NotFound /> )
           : (
             <Fragment>
-              <Route path="/" component={Home} />
-              <Route exact path="/quotes" component={Quotes} />
-              <Route exact path="/quotes/:id" render={(props) => <Quote {...props} quote={getQuoteFromId(quotes,props.match.params.id)} showControls /> } />
-              <Route exact path="/quotes/new" component={NewQuote} />
+              <Route exact path="/" component={Home} />
               <Route exact path="/login" component={SignIn} />
+              <PrivateRoute exact path="/dashboard" component={Quotes} />
+              <PrivateRoute exact path="/quotes/:id" render={(props) => <Quote {...props} quote={getQuoteFromId(quotes,props.match.params.id)} showControls /> } />
+              <Route exact path="/quotes/new" component={NewQuote} />
             </Fragment>
           )
           }
