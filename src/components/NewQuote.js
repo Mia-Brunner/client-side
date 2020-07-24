@@ -1,74 +1,70 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import {useGlobalState} from '../config/store'
 
+function NewQuote(props) {
+   const {dispatch} = useGlobalState();
+   const {history, nextId} = props
+    //styling
+    const divStyles = {
+       display: 'grid',
+       width: '100vw',
+   }
+   const inputStyles = {
+       width: '70vw',
+       margin: '0.5em'
+   }
+   const labelStyles = {
+       fontSize: '1.2em'
+   }
+   const textAreaStyles = {
+       height: '200px',
+       margin: '0.5em',
+       width: '70vw'
+   }
 
-// const { default: Quotes } = require("./Quotes")
-
-const Quote = ({history}) => {
-    const initialFormState = {
+   //state 
+    const initalFormState = {
         name: "",
         phone: "",
         message: ""
-    } 
-    const [newQuote,setQuote] = useState(initialFormState)
-    const [errorMessage, setErrorMessage] = useState(null)
-    const {dispatch} = useGlobalState()
+    }
+    const [formState, setFormState] = useState(initalFormState);
 
-    function handleChange(event) {
-        const name = event.target.name
-        const value = event.target.value
-        setQuote({
-            ...newQuote,
-            [name]: value,
-            [phone]: value,
-            [message]: value,
-        })
+    const handleChange = (event) => {
+        const {name, value} = event.target;
+        setFormState({...formState, [name]: value});
     }
 
-    // Axios 
-    function handleSubmit(event) {
+    const handleSubmit = (event) => {
         event.preventDefault()
-        // Attempt login on server
-        submitQuote(newQuote).then(() => {
-            setQuote(newQuote)
-            dispatch({
-                type: "newQuote",
-                data: newQuote.name,
-                data: newQuote.phone,
-                data: newQuote.message
-            })
-            history.push("/")
-
-        }).catch((error) => {
-            if (error.response && error.response.status === 401)
-                setErrorMessage("Please ensure all details have been filled in")
-            else   
-                setErrorMessage("There may be a problem with the server. Please try again after a few moments.")
-        })		
+        const newQuote = {
+            _id: nextId,
+            name: formState.name,
+            phone: formState.phone,
+            message: formState.message,
+            modified_date: new Date()
+        }
+        dispatch({type: "addQuote", data: newQuote})
+        history.push('/')
     }
-
-    const errorStyles = {
-        color: "red"
-    }
-
+   
     return (
         <form onSubmit={handleSubmit}>
-            {errorMessage && <p style={errorStyles}>{errorMessage}</p>}
-            <div>
-                <label>Name</label>
-                <input required type="text" name="name" placeholder="Name" onChange={handleChange}></input>
+            <div style={divStyles}>
+                <label style={labelStyles}>Name</label>
+                <input style={inputStyles} required type="text" name="name" placeholder="Name" onChange ={handleChange}/>
             </div>
-            <div >
-                <label >Phone</label>
-                <input required type="text" name="phone" placeholder="Phone" onChange={handleChange}></input>
+            <div style={divStyles}>
+                <label style={labelStyles}>Phone</label>
+                <input style={inputStyles}  type="text" name="phone" onChange={handleChange}/>
             </div>
-            <div >
-                <label >Message</label>
-                <input required type="text" name="message" placeholder="Message" onChange={handleChange}></input>
+            <div style={divStyles}>
+                <label style={labelStyles}>Message</label>
+                <textarea style={textAreaStyles} type="text" name="message" placeholder="Message" onChange={handleChange} />
             </div>
-            <input type="submit" value="Submit"></input>
+            <input type='submit' value='Add a Post'></input>
         </form>
     )
 }
 
-export default Quote
+export default NewQuote;
