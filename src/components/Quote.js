@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {useGlobalState} from '../config/store'
 import {deleteQuote} from '../services/quoteServices'
 import {StyledQuote} from './StyledCompnents'
+import {StyledCards, StyledDeleteBtn} from '../styled/StyledDash'
 
 const Quote = ({quote, history}) => {
 
@@ -38,14 +39,14 @@ const Quote = ({quote, history}) => {
   return (
     <>
    
-    <div>
+    <StyledCards>
       <p>Name: {name}</p>
       <p>Phone number: {phone}</p>
       <p>Message:{message}</p>
      
-       <button onClick={handleDelete}>Delete</button>
+       <StyledDeleteBtn onClick={handleDelete}>Delete</StyledDeleteBtn>
       
-      </div>
+      </StyledCards>
     
     </>
   )

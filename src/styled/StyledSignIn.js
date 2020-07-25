@@ -1,27 +1,21 @@
 import styled, {css} from "styled-components";
-import image from '../images/login-background.jpeg'
 
-export const Split = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    grid-gap: 20px;
 
-    @media (max-width: 786px) {
-        grid-template-columns: 1fr;
-    }
-}
-`;
+// export const Split = styled.div`
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     align-items: center;
+//     grid-gap: 20px;
+
+//     @media (max-width: 786px) {
+//         grid-template-columns: 1fr;
+//     }
+// }
+// `;
 
 export const SplitTitle = styled.h1`
   font-size: 42px;
   padding: 50px;
-`;
-
-export const SplitImg = styled.img`
-  height: 100%;
-  width: 100%;
-  background-image: url(${image});
 `;
 
 // 
@@ -73,7 +67,7 @@ export const StyledTextArea = styled.textarea`
     `;
 export const StyledButton = styled.button`
     display: block;
-    background-color: #20232B;
+    background-color: #03ABF3;
     color: #fff;
     font-size: 0.7rem;
     border: 0;
