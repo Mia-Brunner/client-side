@@ -1,5 +1,6 @@
 import React from 'react'
 import {useGlobalState} from '../config/store'
+import {StyledQuote} from './StyledCompnents'
 
 const Quote = ({quote, history}) => {
 
@@ -22,14 +23,18 @@ const Quote = ({quote, history}) => {
     }
 
   return (
+    <>
+    <StyledQuote>
     <div>
-      <p>{name}</p>
-      <p>{phone}</p>
-      <p>{message}</p>
+      <p>Name: {name}</p>
+      <p>Phone number: {phone}</p>
+      <p>Message:{message}</p>
       <div>
       <button onClick={handleDelete}>Delete</button>
       </div>
     </div>
+    </StyledQuote>
+    </>
   )
 }
 

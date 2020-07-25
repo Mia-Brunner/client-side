@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import {useGlobalState} from '../config/store'
 import {loginUser, setLoggedInUser} from '../services/authServices'
+import {StyledForm, StyledFormWrapper, StyledInput, StyledButton} from '../styled/StyledSignIn'
+
 
 
 const SignIn = ({history}) => {
@@ -48,18 +50,22 @@ const SignIn = ({history}) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        
+
+        <StyledFormWrapper>
+        <StyledForm onSubmit={handleSubmit}>
             {errorMessage && <p style={errorStyles}>{errorMessage}</p>}
             <div>
                 <label>Username</label>
-                <input required type="text" name="username" placeholder="Enter a username" onChange={handleChange}></input>
+                <StyledInput required type="text" name="username" placeholder="Enter a username" onChange={handleChange}></StyledInput>
             </div>
             <div >
                 <label >Password</label>
-                <input required type="password" name="password" placeholder="Enter a password" onChange={handleChange}></input>
+                <StyledInput required type="password" name="password" placeholder="Enter a password" onChange={handleChange}></StyledInput>
             </div>
-            <input type="submit" value="Login"></input>
-        </form>
+            <StyledButton type="submit" value="Login">Login</StyledButton>
+        </StyledForm>
+        </StyledFormWrapper>
     )
 }
 export default SignIn

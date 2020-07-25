@@ -2,18 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {logoutUser} from '../services/authServices'
 import {useGlobalState} from '../config/store'
-import {redirect} from 'react-router-dom'
+import {StyledNav, NavItems, NavBrand, NavItem, NavItemButton} from '../styled/StyledNav.js'
 
 const Navbar = () => {
-  const divStyles = {
-    display: 'flex'
-}
-const linkStyles = {
-    fontSize: '1.2em',
-    textDecoration: 'none',
-    margin: '.5em'
-}
-
 // Logout user
 function handleLogout() {
   logoutUser().then((response) => {
@@ -30,23 +21,26 @@ function handleLogout() {
 
 const {store, dispatch} = useGlobalState()
 const {loggedInUser} = store
+
 return (
-    <div style={divStyles}>
+    <StyledNav>
+        <NavBrand>
+            <NavItem to="/">PID Electrical Services</NavItem>
+        </NavBrand>
         {loggedInUser 
-        ? (<div>
-            <Link style={linkStyles} to="/">{loggedInUser}</Link>
-            <Link style={linkStyles} onClick={handleLogout} to="/">Logout</Link>
-            </div>)
-        : (<div>
-            <Link style={linkStyles} to="/login">Login</Link>
-            <Link style={linkStyles} to="/quotes/new">Add a quote</Link>
-            </div>)
+        ? (<NavItems>
+            <NavItem to="/">{loggedInUser}</NavItem>
+            <NavItemButton onClick={handleLogout} to="/">Logout</NavItemButton>
+            </NavItems>
+            )
+        : (
+            <NavItems>
+            <NavItemButton to="/quotes/new">Add a quote</NavItemButton>
+            </NavItems>)
         }
-        <div >
-            <Link style={linkStyles} to="/">Home</Link>
-        </div>
-    </div>
+        
+    </StyledNav>
 )
-}
+ }
 
 export default Navbar
