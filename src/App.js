@@ -1,5 +1,7 @@
-import React,{Fragment, useReducer, useEffect} from 'react'
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
+import React,{Fragment, useReducer, useEffect, useState} from 'react'
+import {BrowserRouter, Route} from 'react-router-dom';
+
 import Navbar from './components/Navbar'
 import SignIn from './components/SignIn';
 
@@ -17,6 +19,7 @@ import {StateContext} from './config/store';
 import {getQuoteFromId, getAllQuotes} from './services/quoteServices';
 import PrivateRoute from './components/PrivateRoute'
 import { GlobalStyle } from '../src/styled/Global'
+
 
 const App = () => {
 
@@ -47,7 +50,6 @@ useEffect(() => {
     
 },[])
 
-
   const [store,dispatch] = useReducer(stateReducer,initialState)
   const {quotes, error} = store
 
@@ -57,7 +59,6 @@ useEffect(() => {
       data: quoteData
     })
 },[])
-
 
   return (
       <StateContext.Provider value={{store,dispatch}}>
@@ -79,5 +80,6 @@ useEffect(() => {
       </StateContext.Provider>
   )
 }
+
 
 export default App
