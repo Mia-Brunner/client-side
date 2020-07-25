@@ -15,6 +15,7 @@ export const Split = styled.div`
 
 export const SplitTitle = styled.h1`
   font-size: 42px;
+  padding: 50px;
 `;
 
 export const SplitImg = styled.img`
@@ -40,13 +41,17 @@ export const StyledFormWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding: 0 20px;
+    height: 80vh;
+    padding: 0 50px;
+    @media (max-width: 786px) {
+        grid-template-columns: 1fr;
+    }
+}
 `;
 export const StyledForm = styled.form`
     width: 100%;
-    max-width: 700px;
-    padding: 40px;
+    max-width: 600px;
+    padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-sizing: border-box;
@@ -70,10 +75,10 @@ export const StyledButton = styled.button`
     display: block;
     background-color: #20232B;
     color: #fff;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     border: 0;
     border-radius: 5px;
-    height: 40px;
+    height: 30px;
     padding: 0 20px;
     cursor: pointer;
     box-sizing: border-box;

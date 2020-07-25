@@ -29,7 +29,7 @@ return (
         </NavBrand>
         {loggedInUser 
         ? (<NavItems>
-            <NavItem to="/">{loggedInUser}</NavItem>
+            <NavItem to="/dashboard">{loggedInUser}'s Dashboard</NavItem>
             <NavItemButton onClick={handleLogout} to="/">Logout</NavItemButton>
             </NavItems>
             )

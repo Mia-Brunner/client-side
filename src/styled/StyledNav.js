@@ -22,7 +22,7 @@ export const NavItems = styled.ul`
 
 export const NavBrand = styled(Link)`
     flex-grow: 1;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 700;
     color: #122227;
     text-decoration: none;

@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {useGlobalState} from '../config/store'
 import {loginUser, setLoggedInUser} from '../services/authServices'
-import {StyledForm, StyledFormWrapper, StyledInput, StyledButton} from '../styled/StyledSignIn'
+import {SplitTitle, StyledForm, StyledFormWrapper, StyledInput, StyledButton} from '../styled/StyledSignIn'
 
 
 
@@ -53,6 +53,9 @@ const SignIn = ({history}) => {
         
 
         <StyledFormWrapper>
+            <SplitTitle>
+            Admin Sign In
+        </SplitTitle>
         <StyledForm onSubmit={handleSubmit}>
             {errorMessage && <p style={errorStyles}>{errorMessage}</p>}
             <div>
@@ -63,7 +66,7 @@ const SignIn = ({history}) => {
                 <label >Password</label>
                 <StyledInput required type="password" name="password" placeholder="Enter a password" onChange={handleChange}></StyledInput>
             </div>
-            <StyledButton type="submit" value="Login">Login</StyledButton>
+            <StyledButton type="submit" value="Login">Sign In</StyledButton>
         </StyledForm>
         </StyledFormWrapper>
     )
