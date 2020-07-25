@@ -18,6 +18,7 @@ import {StateContext} from './config/store';
 
 import {getQuoteFromId, getAllQuotes} from './services/quoteServices';
 import PrivateRoute from './components/PrivateRoute'
+import { GlobalStyle } from '../src/styled/Global'
 
 
 const App = () => {
@@ -62,6 +63,7 @@ useEffect(() => {
   return (
       <StateContext.Provider value={{store,dispatch}}>
         <BrowserRouter>
+        <GlobalStyle />
           <Navbar />
           {error ?  (<NotFound /> )
           : (

@@ -1,10 +1,91 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 // import {Link} from 'react-router-dom'
 
 // // settings
 // const titleFontFamily = 'Lobster'
 // const fontFamily = 'Roboto'
 const accentColor = '#E00DDD'
+
+// const GlobalStyle = createGlobalStlye`
+//         font-family: Arial, Helvetica, sans-serif;
+//         background: linear-gradient(to bottom, #f05053, #e1eec3);
+//         height: 100%;
+//         margin: 0;
+//         color: #555;
+//  `;
+
+// 
+// STYLED COMPONENTS FOR SIGN IN PAGE
+// 
+const sharedStyles = css`
+    background-color: #eee;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin: 10px 0 20px 0;
+    padding: 20px;
+    box-sizing: border-box;
+`;
+
+export const StyledFormWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px;
+    
+`;
+export const StyledForm = styled.form`
+    width: 100%;
+    max-width: 700px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    `;
+
+export const StyledInput = styled.input`
+    display: block;
+    width: 100%;
+    ${sharedStyles}
+    `;
+
+export const StyledTextArea = styled.textarea`
+    background-color: #eee;
+    width: 100%;
+    min-height: 100px;
+    resize: none;
+    ${sharedStyles}
+    `;
+export const StyledButton = styled.button`
+    display: block;
+    background-color: #20232B;
+    color: #fff;
+    font-size: 0.9rem;
+    border: 0;
+    border-radius: 5px;
+    height: 40px;
+    padding: 0 20px;
+    cursor: pointer;
+    box-sizing: border-box;
+    `;
+
+// END OF STYLED COMPONENTS FOR SIGN IN 
+
+// 
+// 
+// Styled quotes
+export const StyledQuote = styled.form`
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    `;
 
 // // container formatting
 // export const Page = styled.div `
