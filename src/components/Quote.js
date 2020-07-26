@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {useGlobalState} from '../config/store'
 import {deleteQuote} from '../services/quoteServices'
-import {StyledQuote} from './StyledCompnents'
+import {StyledQuote} from './StyledComponents'
 import {StyledCards, StyledDeleteBtn} from '../styled/StyledDash'
 
 const Quote = ({quote, history}) => {
