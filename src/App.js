@@ -22,6 +22,7 @@ import PrivateRoute from './components/PrivateRoute'
 import { GlobalStyle } from '../src/styled/Global'
 import SectionTitleWithText from './components/section-title/SectionTitleWithText.js';
 import BannerOneSingle from './components/banner/BannerOneSingle.js';
+import TextGridOneSingle from './components/text-grid/TextGridOneSingle';
 
 const App = () => {
   
@@ -76,8 +77,8 @@ useEffect(() => {
               <Route exact path="/quotes/new" component={NewQuote} />
               <Route exact path="/services" component={Services} />
               <Route exact path="/login" component={SignIn} />
-              <Route exact path="/sectionTitleWithText" component={SectionTitleWithText} />
-              <Route exact path="/BannerOneSingle" component={BannerOneSingle} />
+              {/* <Route exact path="/sectionTitleWithText" component={SectionTitleWithText} />
+              <Route exact path="/BannerOneSingle" component={BannerOneSingle} /> */}
               <PrivateRoute exact path="/dashboard" component={Quotes} />
               <PrivateRoute exact path="/quotes/:id" render={(props) => <Quote {...props} quote={getQuoteFromId(quotes,props.match.params.id)} showControls /> } />
               </Switch>
