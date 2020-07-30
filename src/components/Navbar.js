@@ -23,14 +23,14 @@ const {store, dispatch} = useGlobalState()
 const {loggedInUser} = store
 
 return (
-    <StyledNav>
+    <StyledNav data-cy="navbar">
         <NavBrand>
             <NavItem to="/">PID Electrical Services</NavItem>
         </NavBrand>
         {loggedInUser 
         ? (<NavItems>
-            <NavItem to="/dashboard">{loggedInUser}'s Dashboard</NavItem>
-            <NavItemButton onClick={handleLogout} to="/">Logout</NavItemButton>
+            <NavItem to="/dashboard" data-cy="login">{loggedInUser}'s Dashboard</NavItem>
+            <NavItemButton data-cy="logout" onClick={handleLogout} to="/">Logout</NavItemButton>
             </NavItems>
             )
         : (

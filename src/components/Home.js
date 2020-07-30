@@ -4,7 +4,7 @@ import styles from './home.module.css';
 const Home = () => {
   return (
     
-    <div>
+    <div data-cy="home">
 
     <p className={styles.intro}> 
     Looking for an electrician in the Geelong or Golden Plains area?
