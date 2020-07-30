@@ -56,17 +56,17 @@ const SignIn = ({history}) => {
             <SplitTitle>
             Admin Sign In
         </SplitTitle>
-        <StyledForm onSubmit={handleSubmit}>
+        <StyledForm data-cy="loginForm" onSubmit={handleSubmit}>
             {errorMessage && <p style={errorStyles}>{errorMessage}</p>}
             <div>
                 <label>Username</label>
-                <StyledInput required type="text" name="username" placeholder="Enter a username" onChange={handleChange}></StyledInput>
+                <StyledInput data-cy="username" required type="text" name="username" placeholder="Enter a username" onChange={handleChange}></StyledInput>
             </div>
             <div >
                 <label >Password</label>
-                <StyledInput required type="password" name="password" placeholder="Enter a password" onChange={handleChange}></StyledInput>
+                <StyledInput data-cy="password" required type="password" name="password" placeholder="Enter a password" onChange={handleChange}></StyledInput>
             </div>
-            <StyledButton type="submit" value="Login">Sign In</StyledButton>
+            <StyledButton data-cy="loginButton" type="submit" value="Login">Sign In</StyledButton>
         </StyledForm>
         </StyledFormWrapper>
     )

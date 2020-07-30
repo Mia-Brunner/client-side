@@ -27,8 +27,9 @@ const Quotes = () => {
        
       </StyledMainOverviewCard>
     </StyledMainOverview>
-
-    <StyledMainCards>
+    
+    {/* data-cy for cypress */}
+    <StyledMainCards data-cy="quotes">
       
       
       {quotes.map(quote => (<Quote key={quote._id} quote={quote} /> ))}
