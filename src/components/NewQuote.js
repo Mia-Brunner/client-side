@@ -49,20 +49,21 @@ function NewQuote(props) {
     }
    
     return (
-        <form onSubmit={handleSubmit}>
+        // data-cy"" for cypress testing! dont delete
+        <form data-cy="addQuoteForm" onSubmit={handleSubmit}>
             <div style={divStyles}>
                 <label style={labelStyles}>Name</label>
-                <input style={inputStyles} required type="text" name="name" placeholder="Name" onChange ={handleChange}/>
+                <input style={inputStyles} data-cy="name" required type="text" name="name" placeholder="Name" onChange ={handleChange}/>
             </div>
             <div style={divStyles}>
                 <label style={labelStyles}>Phone</label>
-                <input style={inputStyles}  type="text" name="phone" onChange={handleChange}/>
+                <input style={inputStyles}  data-cy="phone" type="text" name="phone" onChange={handleChange}/>
             </div>
             <div style={divStyles}>
                 <label style={labelStyles}>Message</label>
-                <textarea style={textAreaStyles} type="text" name="message" placeholder="Message" onChange={handleChange} />
+                <textarea style={textAreaStyles} data-cy="message" type="text" name="message" placeholder="Message" onChange={handleChange} />
             </div>
-            <input type='submit' value='Add a Post'></input>
+            <input type='submit' data-cy="addQuoteButton" value='Add a Post'></input>
         </form>
     )
 }

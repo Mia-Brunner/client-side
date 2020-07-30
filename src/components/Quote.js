@@ -43,7 +43,7 @@ const Quote = ({quote, history}) => {
       <p>Phone number: {phone}</p>
       <p>Message:{message}</p>
      
-       <StyledDeleteBtn onClick={handleDelete}>Delete</StyledDeleteBtn>
+       <StyledDeleteBtn data-cy="deleteButton" onClick={handleDelete}>Delete</StyledDeleteBtn>
       
       </StyledCards>
     
