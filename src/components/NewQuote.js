@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useGlobalState} from '../config/store'
+import api from '../config/api'
 
 function NewQuote(props) {
    const {dispatch} = useGlobalState();
@@ -34,18 +35,22 @@ function NewQuote(props) {
         const {name, value} = event.target;
         setFormState({...formState, [name]: value});
     }
-
+    //Axios
     const handleSubmit = (event) => {
         event.preventDefault()
         const newQuote = {
-            _id: nextId,
             name: formState.name,
             phone: formState.phone,
             message: formState.message,
-            modified_date: new Date()
+            date: new Date()
         }
-        dispatch({type: "addQuote", data: newQuote})
-        history.push('/')
+        api.post("/quotes",newQuote).then(response=>{
+            console.log(response.data)
+            dispatch({type: "addQuote", data: newQuote})
+            history.push('/')
+        }).catch(error=>console.log(error.message))
+        
+        
     }
    
     return (
@@ -62,7 +67,7 @@ function NewQuote(props) {
                 <label style={labelStyles}>Message</label>
                 <textarea style={textAreaStyles} type="text" name="message" placeholder="Message" onChange={handleChange} />
             </div>
-            <input type='submit' value='Add a Post'></input>
+            <input type='submit' value='Submit'></input>
         </form>
     )
 }
