@@ -35,6 +35,7 @@ return (
             )
         : (
             <NavItems>
+            <NavItemButton to="/services">Services</NavItemButton>
             <NavItemButton to="/quotes/new"data-cy="addQuote">Request Call</NavItemButton>
             </NavItems>)
         }
