@@ -72,13 +72,13 @@ useEffect(() => {
             
             <Fragment>
                 <Switch>
-              <Route exact path="/home" component={Home} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/quotes/new" component={NewQuote} />
               <Route exact path="/services" component={Services} />
               <Route exact path="/login" component={SignIn} />
               <Route exact path="/sectionTitleWithText" component={SectionTitleWithText} />
               <PrivateRoute exact path="/dashboard" component={Quotes} />
               <PrivateRoute exact path="/quotes/:id" render={(props) => <Quote {...props} quote={getQuoteFromId(quotes,props.match.params.id)} showControls /> } />
-              <Route exact path="/quotes/new" component={NewQuote} />
               </Switch>
             </Fragment>
         </BrowserRouter>
