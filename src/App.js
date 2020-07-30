@@ -81,7 +81,6 @@ useEffect(() => {
               <Route exact path="/quotes/new" component={NewQuote} />
               </Switch>
             </Fragment>
-          )
         </BrowserRouter>
       </StateContext.Provider>
   )
