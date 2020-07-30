@@ -24,7 +24,7 @@ import SectionTitleWithText from './components/section-title/SectionTitleWithTex
 
 
 const App = () => {
-
+  
   // initial state for state reducer
   // use reducer hook
   const initialState = {
@@ -72,7 +72,7 @@ useEffect(() => {
             
             <Fragment>
                 <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/home" component={Home} />
               <Route exact path="/services" component={Services} />
               <Route exact path="/login" component={SignIn} />
               <Route exact path="/sectionTitleWithText" component={SectionTitleWithText} />
@@ -81,7 +81,6 @@ useEffect(() => {
               <Route exact path="/quotes/new" component={NewQuote} />
               </Switch>
             </Fragment>
-         
         </BrowserRouter>
       </StateContext.Provider>
   )
