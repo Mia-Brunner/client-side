@@ -69,7 +69,7 @@ function NewQuote(props) {
                 <textarea style={textAreaStyles} data-cy="message" type="text" name="message" placeholder="Message" onChange={handleChange} />
             </div>
 
-            <input type='submit' data-cy="addQuoteButton" value='Add a Post'></input>
+            <input type='submit' data-cy="addQuoteButton" value='Submit'></input>
 
         </form>
     )

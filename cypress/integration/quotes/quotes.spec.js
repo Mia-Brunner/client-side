@@ -2,7 +2,7 @@
 
 let fixtures = {}
 
-beforeEach(() => {
+before(() => {
       // Start tests from home page
       cy.visit("/")
       // If user is logged in, log out
@@ -17,6 +17,7 @@ beforeEach(() => {
         deleteQuote(quote)
       })
 })
+
 
 function deleteQuote(quote) {
 	// If the quote exists, delete it
@@ -38,20 +39,33 @@ describe('Add a quote', () =>{
 		cy.get("[data-cy=addQuoteForm").click()
 		cy.get("[data-cy=name").type(fixtures.newQuote.name)
     cy.get("[data-cy=phone").type(fixtures.newQuote.phone)
-    cy.get("[data-cy=message").type(fixtures.newQuote.message)
+    cy.get("[data-cy=message]").type(fixtures.newQuote.message)
     cy.get("[data-cy=addQuoteButton").click()
+    cy.get('[data-cy=home]').should('be.visible')
+  })
+}) 
+
+describe('check quote has been added', () => {
+  it("should go to login", () => {
     // log in to verify quote was added 
-    cy.visit('/dashboard')
-    cy.get("[data-cy=username]").type(fixtures.registeredUser.username)
-    cy.get("[data-cy=password]").type(fixtures.registeredUser.password)
-    cy.get("[data-cy=loginButton]").click()
-    cy.get('[data-cy=quotes]').should("contain", fixtures.newQuote.name)
+    cy.visit("/login")
+    cy.url().should('include', '/login')
+    })
+  it('can login', () => {
+    // fixtures.registerUser. username and password werent working 
+      cy.get("[data-cy=username]").type("admin")
+      cy.get("[data-cy=password]").type("12345")
+      cy.get("[data-cy=loginButton]").click()
+      cy.get('[data-cy=quotes]').should('be.visible')
+    })
+    it('can view and delete quotes', () => {
+      cy.get('[data-cy=quotes]').should("contain", fixtures.newQuote.name)
     // If the quote exists, delete it
-		cy.contains(fixtures.newQuote.name).then(newQuote => {
-			newQuote.click()
-			cy.get("[data-cy=deleteButton").click()
+    cy.contains(fixtures.newQuote.name).then (newQuote => {
+      cy.get(newQuote).should('be.visible')
+      cy.get("[data-cy=deleteButton").click()
     })
     // verify quote was deleted
     cy.get('[data-cy=quotes]').should("not.contain", fixtures.newQuote.name)
-
+  })
 })
