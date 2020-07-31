@@ -13,7 +13,7 @@ const Services = ({ location }) => {
       <Fragment>
 
         {/* Welcome Services Page - section title with text*/}
-        <SectionTitleWithText spaceTopClass="pt-100" spaceBottomClass="pb-95" />
+        <SectionTitleWithText spaceTopClass="pt-50" spaceBottomClass="pb-95" />
 
         {/* banner Client Types*/}
         <BannerOne spaceBottomClass="pb-70" />
