@@ -1,0 +1,19 @@
+[
+    {
+      "id": "1",
+      "image": "/assets/img/testimonial/testi-1.png",
+      "content": "I would highly recommend the electrical services provided by Paul and his team. They have provided electrical services for a range of reasons on a number of occasions over the past few years. Paul is responsive, always on time and always completes the job professionally to a high standard.",
+      "customerName": "Grace Adams",
+      "title": "Client"
+    },
+    {
+      "id": "2",
+      "image": "/assets/img/testimonial/testi-1.png",
+      "content": "What you expect from any electrician is reliability and competence. What you get from PID Electrical Services is all that, plus professional consulting advice. It works for my business.",
+      "customerName": "David Lawson",
+      "title": "Client"
+    }
+  
+  
+  ]
+  
