@@ -23,6 +23,7 @@ import { GlobalStyle } from '../src/styled/Global'
 import SectionTitleWithText from './components/section-title/SectionTitleWithText.js';
 import BannerOneSingle from './components/banner/BannerOneSingle.js';
 import TextGridOneSingle from './components/text-grid/TextGridOneSingle';
+import TestimonialOneSingle from './components/testimonial/TestimonialOneSingle';
 
 const App = () => {
   
