@@ -18,7 +18,7 @@ const TestimonialOne = ({
     slidesPerView: 1,
     loop: true,
     autoplay: {
-      delay: 9000,
+      delay: 5000,
       disableOnInteraction: false
     }
   };
