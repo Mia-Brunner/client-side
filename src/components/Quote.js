@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {useGlobalState} from '../config/store'
 import {deleteQuote} from '../services/quoteServices'
 import {StyledCards, StyledDeleteBtn} from '../styled/StyledDash'
+import moment from 'moment'
 
 const Quote = ({quote, history}) => {
 
@@ -12,7 +13,7 @@ const Quote = ({quote, history}) => {
     // If we don't have a post, return null
     if (!quote) return null
 
-  const {name, phone, message} = quote
+  const {name, phone, message, date} = quote
   // const allowDelete = loggedInUser 
     // Handle the delete button
     function handleDelete(event) {
@@ -39,6 +40,7 @@ const Quote = ({quote, history}) => {
     <>
    
     <StyledCards>
+      {date && <p>{moment(date).fromNow()}</p>}
       <p>Name: {name}</p>
       <p>Phone number: {phone}</p>
       <p>Message:{message}</p>
