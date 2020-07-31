@@ -24,6 +24,7 @@ import SectionTitleWithText from './components/section-title/SectionTitleWithTex
 import BannerOneSingle from './components/banner/BannerOneSingle.js';
 import TextGridOneSingle from './components/text-grid/TextGridOneSingle';
 import TestimonialOneSingle from './components/testimonial/TestimonialOneSingle';
+import SectionTitleTwo from './components/section-title/SectionTitleTwo';
 
 const App = () => {
   
