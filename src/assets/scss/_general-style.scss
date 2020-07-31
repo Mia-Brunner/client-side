@@ -1,0 +1,126 @@
+/*-- Google Font --*/
+
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,500,600,700|Poppins:300,400,500,600,700,800,900|Josefin+Sans:wght@300;400;500;600;700|Abril+Fatface|Great+Vibe|Lobster&display=swap");
+
+/*-- General Style --*/
+
+// *,
+// *::after,
+// *::before {
+//   box-sizing: border-box;
+// }
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: $poppins;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 24px;
+
+  color: #000;
+  background-color: $white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $poppins;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+p {
+  font-family: $poppins;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 15px;
+
+  color: #333;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 42px;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 36px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+h5 {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+h6 {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+// Margin bottom
+
+.mb-30 {
+    margin-bottom: 20px;
+}
+
+.mb-90 {
+    margin-bottom: 90px;
+}
+
+
+// Padding top
+
+.pt-50 {
+    padding-top: 50px;
+    @media #{$xs-layout} {
+      padding-top: 40px;
+    }
+}
+
+
+
+// Padding bottom
+
+.pb-70 {
+    padding-bottom: 70px;
+    @media #{$xs-layout} {
+      padding-bottom: 30px;
+    }
+}
+
+.pb-95 {
+    padding-bottom: 50px;
+    @media #{$xs-layout} {
+      padding-bottom: 55px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+      max-width: 1200px;
+    }
+}
